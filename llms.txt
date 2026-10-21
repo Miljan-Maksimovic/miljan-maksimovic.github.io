@@ -18,6 +18,12 @@ Not a fit: brands without a working ad yet, media buying, button colour tests, p
 - 7-Day Lost-Click Diagnostic, $2,000: the full map, a tracking check, a promise check from ad to checkout, the customers' own words, a claims sheet, three proven reference pages and a test plan.
 - Beat-Your-PDP Program: four builds a month and one test always running, no minimum term. If no page or test beats the control in a randomized test by the end of month three, month four is free.
 
+## Pages
+
+- [Home](https://miljan-maksimovic.github.io/): the offer, the Seam Method, the promise, the first 30 days, fit and FAQ
+- [Sample Lost-Click Map](https://miljan-maksimovic.github.io/sample-map/): a complete free map done on a public brand as labelled spec work
+- [Test calculator](https://miljan-maksimovic.github.io/calculator/): purchases, visitors and weeks a split test needs at a given traffic level
+
 ## Contact
 
 - X: https://x.com/miljan_shopify (send the ad and the page it lands on)
