@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Miljan Maksimovic">
+<meta property="og:description" content="Put more budget on your best ad, at the CPA you want. The page after the ad, for health and supplement brands on Meta.">
+<style>:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Miljan Maksimovic</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="For health and supplement brands whose best Meta ads tell a story. I build the page that answers what the ad left open, and test it against your product page with your own traffic.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,700;112,800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column with a split hero; the hero shows an ad beside the phone screen it lands on, the seam marked in red. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#0f1623; --ink-2:#4a5466; --line:#dde1e8;
+  --seam:#e5484d; --seam-soft:#fde9ea; --meta:#0a66ff; --chip:#eef1f6;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c1017; --surface:#141a24; --ink:#eef1f6; --ink-2:#a3adbd; --line:#273041;
+  --seam:#ff6b6f; --seam-soft:#3a1d22; --meta:#4d8dff; --chip:#1c2330; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1017; --surface:#141a24; --ink:#eef1f6; --ink-2:#a3adbd; --line:#273041;
+  --seam:#ff6b6f; --seam-soft:#3a1d22; --meta:#4d8dff; --chip:#1c2330; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5.4vw,56px);line-height:1.04;font-weight:800}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.12;font-weight:700}
+h3{font-size:19px;line-height:1.3;font-weight:700}
+p{margin:0}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.lede{font-size:19px;color:var(--ink-2);max-width:34em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--body);text-decoration:none;border:1px solid transparent}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-ghost{border-color:var(--line);background:var(--surface)}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--meta);outline-offset:2px}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{font:700 17px/1 var(--display);font-stretch:112%;text-decoration:none}
+.bar nav{display:flex;gap:22px;font-size:15px;color:var(--ink-2)}
+.bar nav a{text-decoration:none}
+.bar .btn{min-height:38px;padding:0 16px;font-size:14px}
+@media (max-width:760px){.bar nav{display:none}}
+
+section{padding-block:72px}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;gap:12px;margin-bottom:32px;max-width:40em}
+
+/* hero */
+.hero{padding-block:56px 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{font-size:14px;color:var(--ink-2)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}}
+
+/* the seam: ad card, red break, phone */
+.seam{position:relative;display:grid;grid-template-columns:1fr 34px 1fr;align-items:center;gap:0;min-width:0;margin:28px 0 0}
+.seam-label{position:absolute;top:-28px;left:0;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:13px;line-height:1.45;min-width:0}
+.ad-top{display:flex;align-items:center;gap:8px;padding:12px 12px 8px}
+.ad-dot{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#7a8cae,#c3cbd9);flex:none}
+.ad-name{font-weight:600;font-size:13px}.ad-sp{font-size:11px;color:var(--ink-2)}
+.ad-text{padding:0 12px 10px}
+.ad-img{height:118px;background:
+  radial-gradient(circle at 70% 35%,rgba(255,255,255,.55) 0 14px,transparent 15px),
+  linear-gradient(160deg,#2b3550 0%,#46557a 55%,#8e7a9c 100%)}
+.ad-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:var(--chip)}
+.ad-foot b{display:block;font-size:12px}.ad-foot span{font-size:11px;color:var(--ink-2)}
+.ad-btn{font-size:12px;font-weight:600;padding:7px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--line);white-space:nowrap}
+.mark{background:var(--seam-soft);box-shadow:inset 0 -2px 0 var(--seam);padding:0 2px;border-radius:2px}
+.break{height:100%;display:grid;place-items:center;position:relative}
+.break::before{content:"";position:absolute;top:8%;bottom:8%;left:50%;border-left:2px dashed var(--seam)}
+.break span{position:relative;writing-mode:vertical-rl;transform:rotate(180deg);background:var(--bg);color:var(--seam);font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 0}
+.phone{border:1px solid var(--line);border-radius:28px;background:var(--surface);padding:10px;min-width:0}
+.screen{border-radius:20px;overflow:hidden;background:var(--bg);border:1px solid var(--line)}
+.ph-status{display:flex;justify-content:space-between;font:600 10px/1 var(--body);padding:8px 14px 6px}
+.ph-gallery{height:96px;background:linear-gradient(135deg,#d9dee7,#eef1f5);display:grid;place-items:center;color:#5d6778;font-size:11px}
+.ph-body{padding:10px 12px 12px;display:grid;gap:6px;font-size:12px}
+.ph-title{font-weight:700;font-size:13px}
+.ph-price{display:flex;justify-content:space-between;align-items:center}
+.ph-buy{background:var(--ink);color:var(--bg);text-align:center;border-radius:8px;padding:8px;font-weight:600;font-size:12px}
+.ph-list{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:3px;color:var(--ink-2);font-size:11.5px}
+.ph-list li:last-child{color:var(--ink)}
+.seam-cap{grid-column:1/-1;margin-top:14px;font-size:13px;color:var(--ink-2)}
+@media (max-width:560px){
+  .seam{grid-template-columns:1fr;gap:0}
+  .break{height:44px}
+  .break::before{top:50%;bottom:auto;left:6%;right:6%;border-left:0;border-top:2px dashed var(--seam)}
+  .break span{writing-mode:horizontal-tb;transform:none;padding:0 8px}
+  .phone{max-width:290px;justify-self:center;width:100%}
+}
+
+/* prose */
+.prose{display:grid;gap:18px;max-width:38em}
+.prose p{color:var(--ink)}
+.prose .quiet{color:var(--ink-2)}
+
+/* method steps: a real sequence */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{display:grid;gap:10px;align-content:start;min-width:0}
+.step::before{counter-increment:s;content:"Step " counter(s);font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--seam)}
+.step p{color:var(--ink-2);font-size:16px}
+.step ul{margin:0;padding-left:18px;color:var(--ink-2);font-size:16px;display:grid;gap:6px}
+@media (max-width:820px){.steps{grid-template-columns:1fr;gap:28px}}
+
+/* offer ladder */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.rung{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;min-width:0}
+.rung.feature{border-color:var(--ink)}
+.price{font:800 30px/1 var(--display);font-stretch:112%}
+.price small{font:500 13px/1.3 var(--body);color:var(--ink-2);display:block;margin-top:6px;font-stretch:normal}
+.rung ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15.5px}
+.rung li{padding-left:22px;position:relative}
+.rung li::before{content:"";position:absolute;left:2px;top:.62em;width:10px;height:2px;background:var(--seam)}
+.rung li b{font-weight:600}
+@media (max-width:900px){.ladder{grid-template-columns:1fr}}
+
+/* promise */
+.promise{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
+.promise h3{font-size:24px}
+.promise ul{margin:0;padding-left:18px;display:grid;gap:8px;color:var(--ink-2);font-size:16px}
+@media (max-width:820px){.promise{grid-template-columns:1fr;gap:20px;padding:22px}}
+
+/* list rows (Apple style) */
+.rows{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 20px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row dt{font:500 13px/1.5 var(--mono);color:var(--ink-2);padding-top:2px}
+.row dd{margin:0;font-size:16px}
+@media (max-width:560px){.row{grid-template-columns:1fr;gap:4px}}
+
+/* fit */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fit>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:12px;align-content:start}
+.fit ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:16px;color:var(--ink-2)}
+@media (max-width:820px){.fit{grid-template-columns:1fr}}
+
+/* why me */
+.why{counter-reset:w;margin:0;padding:0;list-style:none;display:grid;gap:14px;max-width:40em}
+.why li{display:grid;grid-template-columns:28px 1fr;gap:12px}
+.why li::before{counter-increment:w;content:counter(w);font:500 13px/1.6 var(--mono);color:var(--seam)}
+
+/* faq */
+.faq{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.faq details{border-top:1px solid var(--line)}
+.faq details:first-child{border-top:0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-weight:600;font-size:16.5px;min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq .a{padding:0 20px 20px;display:grid;gap:12px;color:var(--ink-2);font-size:16px;max-width:44em}
+@media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+
+/* terms + cta */
+.terms{margin:0;padding-left:20px;display:grid;gap:10px;max-width:44em;color:var(--ink-2);font-size:16px}
+.final{text-align:left;display:grid;gap:20px;max-width:40em}
+.handle{font:500 15px/1.4 var(--mono);background:var(--chip);border-radius:8px;padding:10px 14px;display:inline-block;user-select:all}
+footer{padding-block:32px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Miljan Maksimovic</a>
+    <nav aria-label="Sections"><a href="#method">How it works</a><a href="#offer">What you get</a><a href="#faq">Questions</a></nav>
+    <a class="btn btn-primary" href="#start">Get a free map</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">For health and supplement brands whose best Meta ads tell a story</p>
+        <h1>Put more budget on your best ad, at the CPA you want.</h1>
+        <p class="lede">Your best ad already did the hard part. She stopped, read to the end and tapped. I build the page that answers what the ad left open, and test it against your product page with your own traffic, split at random. Before you pay anything, I'll map one of your ads so you can judge the work.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#start">Send me your best ad</a>
+          <a class="btn btn-ghost" href="#offer">See what you get</a>
+        </div>
+        <p class="hero-note">Three brands at a time. No minimum term.</p>
+      </div>
+
+      <figure class="seam" aria-label="Example: a story ad next to the product page it sends people to, with the point where the story breaks marked">
+        <figcaption class="seam-label">Example, not a real brand</figcaption>
+        <div class="card" aria-label="The ad">
+          <div class="ad-top"><div class="ad-dot"></div><div><div class="ad-name">Sleep Support Co.</div><div class="ad-sp">Sponsored</div></div></div>
+          <p class="ad-text">For two years I woke up at 3:12 every night. Not 3. Not 3:30. <span class="mark">3:12.</span> I tried melatonin, tea and a new mattress before I found out why my body kept waking me.</p>
+          <div class="ad-img" role="img" aria-label="Ad image"></div>
+          <div class="ad-foot"><div><b>Why you wake at 3am</b><span>The answer surprised her doctor</span></div><span class="ad-btn">Learn more</span></div>
+        </div>
+        <div class="break" aria-hidden="true"><span>Story breaks here</span></div>
+        <div class="phone" aria-label="The page she lands on">
+          <div class="screen">
+            <div class="ph-status"><span>10:41</span><span>5G</span></div>
+            <div class="ph-gallery">Product gallery</div>
+            <div class="ph-body">
+              <div class="ph-title">Restful Magnesium Complex</div>
+              <div class="ph-price"><span>4.8 stars</span><b>$59.00</b></div>
+              <div class="ph-buy">Add to cart</div>
+              <ol class="ph-list"><li>1. Supports muscle recovery</li><li>2. Calms everyday stress</li><li>3. Supports healthy energy</li><li><span class="mark">4. Helps you stay asleep</span></li></ol>
+            </div>
+          </div>
+        </div>
+        <p class="seam-cap">The ad is about one night and one problem. The page opens on a price, and her problem is benefit four.</p>
+      </figure>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The problem</p><h2>The ad did its job. The page never collected on it.</h2></div>
+      <div class="prose">
+        <p>It's late and Ads Manager is open. One ad has the cheapest clicks in the account: people stop on it, read it and tap. Its cost per purchase is still worse than ads with half its click-through rate. It's easy to call that the wrong audience or creative fatigue.</p>
+        <p>Here is what happens after the tap. She's on the couch at ten at night, thumb moving. Your ad stops her because it's about the one thing she has. It shows a woman her age with one problem and tells one story. She wants the rest of it, so she taps.</p>
+        <p>She lands on a page built for everyone who will ever buy the product. There's a gallery, a price and a buy box above the fold, then a list of benefits in which the one she clicked for comes fourth. She wanted to know what's wrong, how this fixes it, and whether women like her say it worked. She closes the tab.</p>
+        <p>So you do what the dashboard tells you. You brief new creatives, raise the budget and watch CPA climb, then cut back and brief again. The ad takes the blame for a problem that starts after the click.</p>
+        <p class="quiet">The question is where the story continues, not "presell or product page". Sometimes the answer is a product page rebuilt around the angle. Sometimes it's an advertorial or listicle that answers what the ad left open and then hands her to the product page. A test against your current page settles each case.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">How it works</p><h2>The Seam Method: I start from your ad, not your product.</h2><p class="lede">I find the line where the ad's story stops, build the page that picks it up there, and make it beat your product page in a randomized test.</p></div>
+      <div class="steps">
+        <div class="step"><h3>The lost-click map</h3><p>Every live ad, plus every ad that has run 60 days or more, logged with its hook, angle, format and run length. Each sits next to the first phone screen it lands on, with the line where the story breaks marked.</p></div>
+        <div class="step"><h3>The ad decides the page</h3><ul><li>The headline answers the hook she clicked, and the first image is the ad's own scene.</li><li>The page answers what the ad left open: her objections, how this compares with what she has tried, proof from people like her, and what the first weeks feel like.</li><li>Every claim traces to the ad, a real review or a study.</li></ul></div>
+        <div class="step"><h3>Your product page is the control</h3><ul><li>Every new page runs against the page your ads use today, with traffic from the same ads split at random.</li><li>The metric, the sample and the end date are written down before launch.</li><li>Losing tests are logged next to the winners.</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">What you get</p><h2>Start free. Pay for the diagnostic. Stay only if it's working.</h2></div>
+      <div class="ladder">
+        <div class="rung">
+          <p class="eyebrow">Before you pay</p>
+          <h3>Free Lost-Click Map</h3>
+          <div class="price">$0</div>
+          <p style="font-size:15.5px;color:var(--ink-2)">Send me your top-spending ad, or I'll pull it from the Meta Ad Library. You get it back next to the first phone screen it lands on, with the line where the story breaks marked. It's yours to keep.</p>
+        </div>
+        <div class="rung feature">
+          <p class="eyebrow">Step 1</p>
+          <h3>7-Day Lost-Click Diagnostic</h3>
+          <div class="price">$2,000<small>7 days. Credited to month one if the program starts within 14 days.</small></div>
+          <ul>
+            <li><b>The full map:</b> every live ad, and every ad that has run 60 days or more, next to the first phone screen it lands on.</li>
+            <li><b>Tracking check:</b> Meta's purchases against your Shopify orders by UTM.</li>
+            <li><b>Promise check:</b> ad, page, cart and checkout walked on a phone, every promise traced to checkout.</li>
+            <li><b>Her Words:</b> your customers' exact phrases for the problem, each one sourced.</li>
+            <li><b>Claims Sheet:</b> every claim a page may make, with its source.</li>
+            <li><b>Proven Page Match:</b> three reference pages other brands have kept running ads to for 30 days or more.</li>
+            <li><b>Test plan:</b> the first 3 to 5 tests, each with its control, sample and end date.</li>
+            <li><b>Readout call on day 7.</b> The document is yours either way.</li>
+          </ul>
+        </div>
+        <div class="rung">
+          <p class="eyebrow">Step 2</p>
+          <h3>Beat-Your-PDP Program</h3>
+          <div class="price">Monthly<small>Priced on the call, once I've seen your numbers. No minimum term, 30 days' notice.</small></div>
+          <ul>
+            <li><b>Four builds a month,</b> one a week, ranked by the spend behind each: a new page, a product page variant, an offer step or a post-purchase step.</li>
+            <li><b>A post-purchase offer by day 14.</b></li>
+            <li><b>One test always running</b> against the page your ads use today.</li>
+            <li><b>A live test board,</b> and the test log every Monday, losing tests included.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="promise" style="margin-top:20px">
+        <div style="display:grid;gap:12px">
+          <p class="eyebrow">The Beat-Your-PDP Promise</p>
+          <h3>If no page or test has beaten your control in a randomized test by the end of month three, month four is free.</h3>
+          <p style="font-size:16px;color:var(--ink-2)">No button colours. Every test is a big swing: the first screen after the click, the page itself, the offer, or what she's offered after she buys. I don't add new apps or third-party scripts to your store.</p>
+        </div>
+        <div style="display:grid;gap:12px">
+          <p style="font-weight:600;font-size:16px">It holds when:</p>
+          <ul><li>each test runs to its planned sample and end date</li><li>the control stays unchanged while a test runs</li><li>access and approvals come back within 48 hours</li><li>the ads named in the plan feed the tests</li></ul>
+          <p style="font-weight:600;font-size:16px">And three more:</p>
+          <ul><li>The diagnostic in your inbox on day 7, or your $2,000 back.</li><li>Page one live in a randomized split by the end of month one, or month two isn't billed until it is.</li><li>A build every week, or a quarter off the next invoice.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">The first 30 days</p><h2>Your first page is in a live test by day 14.</h2></div>
+      <dl class="rows">
+        <div class="row"><dt>Before you pay</dt><dd>One of your ads, mapped to its landing page with the break marked. Free.</dd></div>
+        <div class="row"><dt>Days 1 to 7</dt><dd>The diagnostic: the full map, tracking and promise checks, her words, the claims sheet, three proven reference pages and the test plan. Readout call on day 7.</dd></div>
+        <div class="row"><dt>Week 1</dt><dd>Win terms signed and controls named. The post-purchase offer is built for your approval. You see three lead options for page one.</dd></div>
+        <div class="row"><dt>Week 2</dt><dd>Page one built, checked on a phone and launched by day 14 into a randomized split against your product page. The post-purchase offer goes live.</dd></div>
+        <div class="row"><dt>Weeks 3 and 4</dt><dd>Builds three and four. Page one keeps running to its planned end date. Every test shows on the live test board.</dd></div>
+        <div class="row"><dt>Every Monday</dt><dd>The test board and the test log, losing tests included.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="fit">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Fit</p><h2>Who this is for.</h2></div>
+      <div class="fit">
+        <div><h3>A fit if</h3><ul>
+          <li>You sell a health, beauty or supplement product on Shopify, and cold Meta traffic brings in most of your new customers.</li>
+          <li>You spend $50,000 or more a month on Meta.</li>
+          <li>You have at least one ad that works: it has run for weeks, people click it, and you have tried to push more money through it.</li>
+          <li>Your ads tell different stories, but most of them land on the same product page.</li>
+        </ul></div>
+        <div><h3>Not a fit if</h3><ul>
+          <li>Your ads don't get clicks yet. A page can't save an ad nobody stops for.</li>
+          <li>You want button colours and trust badges tested.</li>
+          <li>You want someone to run your media. Your buyer keeps the account.</li>
+          <li>You need claims the product can't back: "cures", invented doctors, made-up publications.</li>
+          <li>You want a guaranteed lift. Nobody honest can promise one.</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Why me</p><h2>One person owns every line after the click.</h2></div>
+      <ol class="why">
+        <li><span>I'm a direct-response copywriter. I choose the angle, judge every lead and sign off every line, and no junior or account manager sits between us.</span></li>
+        <li><span>I start from your ad. Before you pay, you'll see one of yours mapped to the page it lands on, with the break marked.</span></li>
+        <li><span>You can read the work first: advertorials I wrote for a US supplement brand on cold Meta traffic, built without an invented doctor or publication, and the pages I build every week for a DTC device brand's winning ads. I open them on a call.</span></li>
+        <li><span>I earn more than the base only when a randomized test you can check in your own Shopify says I won, and losing tests go in the same log as the wins.</span></li>
+        <li><span>I work with three brands at a time, with no minimum term.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">Questions</p><h2>What founders ask before they send an ad.</h2></div>
+      <div class="faq">
+        <details><summary>Straight to the product page works best for us.</summary><div class="a"><p>It might. If it does, it stays. Your product page is the control, and nothing I build replaces it until it beats it in a randomized test. Sometimes the best answer is a product page rebuilt around one angle. If your best ads are long videos that already teach the mechanism, the work may be on the product page itself.</p></div></details>
+        <details><summary>Show me a page you built that beat a control.</summary><div class="a"><p>I don't have a published randomized win against a product page yet, and I won't dress one up. What you can judge today: one of your own ads, mapped before you pay; live pages I wrote, opened on a call; and the test rules we both sign before anything runs. There's no minimum term, and if nothing has beaten your control by the end of month three, month four is free.</p></div></details>
+        <details><summary>Can you guarantee a lift?</summary><div class="a"><p>Not a percentage, and be careful with anyone who promises one before seeing your data. What I do guarantee: if no page or test has beaten your control in a randomized test by the end of month three, month four is free, as long as each test runs to its planned sample and end date and the control stays unchanged while it runs.</p></div></details>
+        <details><summary>We tried advertorials and listicles. They didn't work.</summary><div class="a"><p>Ask three things about that test: which ads fed it, how long it ran, and what it was judged on. A copied listicle tested for three days and judged on platform attribution can read very differently in a split test. That's why only randomized tests count here.</p></div></details>
+        <details><summary>Others review the store free on a call. Why pay $2,000?</summary><div class="a"><p>You get the free part too: one of your ads, mapped before you decide. A call gives you opinions in 30 minutes. The diagnostic gives you a written lost-click map, a tracking check, a promise check from ad to checkout, your customers' own words, a claims sheet, three proven reference pages and a test plan that states the sample each test needs. You own it and can run it in-house.</p></div></details>
+        <details><summary>Tests at our size are too small to prove anything.</summary><div class="a"><p>They are if they test small things. At a 3% conversion rate, a test needs about 1,600 purchases per arm to find a 10% lift, and about 420 per arm to find a 20% lift (95% confidence, 80% power). A button colour can't be read at your traffic. A page that carries the ad's story can move enough to be read, which is why every test here is a big swing.</p></div></details>
+        <details><summary>Do we have to give you ad account access?</summary><div class="a"><p>Read access, or a monthly export from Ads Manager and Shopify. I never touch budgets or campaigns.</p></div></details>
+        <details><summary>We're in health. What about compliance?</summary><div class="a"><p>Every claim on the page has a source on the claims sheet. No invented doctors or publications. A soft label at the top and the full disclosure at the bottom. Nothing that lifts conversion while raising refunds or legal risk.</p></div></details>
+        <details><summary>Why one person and not an agency?</summary><div class="a"><p>I choose the angle, judge every lead and sign off every line, and nobody junior sits between us. I use AI tools for research pulls and page builds; the angle and every claim are my call. The cap is three brands so that stays true.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="start">
+    <div class="wrap final">
+      <p class="eyebrow">Start here</p>
+      <h2>Send me your best ad. I'll send back the line where your page loses it.</h2>
+      <p class="lede">Your top-spending ad and the page it lands on, or just your store, and I'll find the ad in the Meta Ad Library. The map comes back free, next to the first phone screen it lands on, with the break marked.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://x.com/miljan_shopify">Message me on X</a>
+      </div>
+      <p class="hero-note">On X: <span class="handle">@miljan_shopify</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Miljan Maksimovic. The page after the ad, for DTC brands on Shopify.</span><span>Daily funnel teardowns on X, <a href="https://x.com/miljan_shopify">@miljan_shopify</a></span></div>
+</footer>
+
+</body>
+</html>
