@@ -8,7 +8,7 @@
 - A founder whose best ad has cheap clicks and a cost per purchase that climbs every time it is scaled
 - Advertorials, listicles, story pages, quizzes or product page variants written for one specific ad angle
 - Randomized split tests of a new page against the current product page, judged on Shopify orders
-- A written audit of every live ad next to the first phone screen it lands on
+- A first page built for the brand's top ad, live within a week, before any monthly commitment
 
 Not a fit: brands without a working ad yet, media buying, button colour tests, page factories, or claims the product cannot back.
 
@@ -16,7 +16,8 @@ Not a fit: brands without a working ad yet, media buying, button colour tests, p
 
 - Free Lost-Click Map: one ad mapped to the first phone screen it lands on, with the line where the story breaks marked.
 - The First Page, $600: one page built for the brand's top ad, with the customers' own words and claims, promise and tracking checks, live within 7 days of access and set up to run against the product page in a random split.
-- Beat-Your-PDP Program: four builds a month and one test always running, no minimum term. If no page or test beats the control in a randomized test by the end of month three, month four is free.
+- Test Program, for brands spending $50,000 to $100,000 a month on Meta: two builds a month and one test always running, no minimum term.
+- Beat-Your-PDP Program, for brands spending $100,000 or more a month: four builds a month and one test always running, no minimum term. If no page or test beats the control in a randomized test by the end of month three, month four is free.
 
 ## Pages
 
