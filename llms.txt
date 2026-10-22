@@ -15,7 +15,7 @@ Not a fit: brands without a working ad yet, media buying, button colour tests, p
 ## The offer
 
 - Free Lost-Click Map: one ad mapped to the first phone screen it lands on, with the line where the story breaks marked.
-- 7-Day Lost-Click Diagnostic, $2,000: the full map, a tracking check, a promise check from ad to checkout, the customers' own words, a claims sheet, three proven reference pages and a test plan.
+- The First Page, $600: one page built for the brand's top ad, with the customers' own words and claims, promise and tracking checks, live within 7 days of access and set up to run against the product page in a random split.
 - Beat-Your-PDP Program: four builds a month and one test always running, no minimum term. If no page or test beats the control in a randomized test by the end of month three, month four is free.
 
 ## Pages
